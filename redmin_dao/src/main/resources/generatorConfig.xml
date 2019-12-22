@@ -15,7 +15,7 @@
 		</commentGenerator>
 		<!-- jdbc连接 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-						connectionURL="jdbc:mysql://localhost:3306/redmin" userId="root" password="!QAZ4esz"/>
+						connectionURL="jdbc:mysql://localhost:3306/redmin" userId="your_username" password="your_password"/>
 
 		<javaModelGenerator targetPackage="com.lotus.dao.bean" targetProject="E:\workspace-git\redmin-FirstEdition\redmin\redmin_dao\src\main\java\com\lotus\dao\bean">
 			<property name="trimStrings" value="true"/>
