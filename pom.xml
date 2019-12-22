@@ -20,6 +20,11 @@
         <redmin_service.version>0.0.1</redmin_service.version>
         <redmin_dao.version>0.0.1</redmin_dao.version>
         <redmin_controller.version>0.0.1</redmin_controller.version>
+        <mybatis-spring-boot-starter.version>2.1.1</mybatis-spring-boot-starter.version>
+        <mybatis-generator-core.version>1.4.0</mybatis-generator-core.version>
+        <druid.version>1.1.20</druid.version>
+        <mysql.version>8.0.18</mysql.version>
+        <mybatis-generator-maven-plugin.version>1.4.0</mybatis-generator-maven-plugin.version>
         <jdk.version>1.8</jdk.version>
     </properties>
 
@@ -29,5 +34,21 @@
         <module>redmin_controller</module>
         <module>redmin_dao</module>
     </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.7.0</version>
+                    <configuration>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
