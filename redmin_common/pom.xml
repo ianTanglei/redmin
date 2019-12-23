@@ -13,8 +13,7 @@
     <groupId>com.lotus</groupId>
     <artifactId>redmin_common</artifactId>
     <version>0.0.1</version>
-    <name>redmin_common</name>
-    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
 
     <dependencies>
 

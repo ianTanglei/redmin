@@ -13,10 +13,9 @@
     <groupId>com.lotus</groupId>
     <artifactId>redmin_dao</artifactId>
     <version>0.0.1</version>
-    <name>redmin_dao</name>
-    <description>Demo project for Spring Boot</description>
 
     <dependencies>
+
         <dependency>
             <groupId>com.lotus</groupId>
             <artifactId>redmin_common</artifactId>

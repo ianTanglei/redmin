@@ -3,7 +3,7 @@
 		"http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
 	<!-- 指定数据连接驱动jar地址 -->
-	<classPathEntry location="C:\Users\User\.m2\repository\mysql\mysql-connector-java\8.0.18\mysql-connector-java-8.0.18.jar"/>
+	<classPathEntry location="C:\Users\tangl\.m2\repository\mysql\mysql-connector-java\8.0.18\mysql-connector-java-8.0.18.jar"/>
 	<!-- 一个数据库一个context -->
 	<context id="MysqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 		<property name="beginningDelimiter" value="`"/>
@@ -14,22 +14,28 @@
 			<property name="suppressDate" value="true"/>
 		</commentGenerator>
 		<!-- jdbc连接 -->
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-						connectionURL="jdbc:mysql://localhost:3306/redmin" userId="your_username" password="your_password"/>
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+						connectionURL="jdbc:mysql://localhost:3306/redmin?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false" userId="root" password="root"/>
 
-		<javaModelGenerator targetPackage="com.lotus.dao.bean" targetProject="E:\workspace-git\redmin-FirstEdition\redmin\redmin_dao\src\main\java\com\lotus\dao\bean">
+		<javaModelGenerator targetPackage="com.lotus.dao.bean" targetProject="E:\workSpace\git\firstedition\redmin\redmin_dao\src\main\java\com\lotus\dao\bean">
 			<property name="trimStrings" value="true"/>
 			<property name="enableSubPackages" value="true" />
 		</javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="com.lotus.dao.mapper" targetProject="E:\workspace-git\redmin-FirstEdition\redmin\redmin_dao\src\main\resources\com\lotus.dao.mapperr"/>
+		<sqlMapGenerator targetPackage="com.lotus.dao.mapper" targetProject="E:\workSpace\git\firstedition\redmin\redmin_dao\src\main\java\com\lotus\dao\mapper"/>
 
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.lotus.dao.bean" targetProject="E:\workspace-git\redmin-FirstEdition\redmin\redmin_dao\src\main\java\com\lotus\dao\mapper"/>
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.lotus.dao.mapper" targetProject="E:\workSpace\git\firstedition\redmin\redmin_dao\src\main\resources\com\lotus\dao\mapper"/>
 
-		<table tableName="redmin_redis_parameter" domainObjectName="RedminRedisParameter"/>
-		<table tableName="redmin_user" domainObjectName="RedminUser"/>
-		<table tableName="redmin_configration" domainObjectName="RedminConfigration"/>
-		<table tableName="redmin_redis_operation_record" domainObjectName="RedminRedisOperationRecord"/>
+		<table tableName="redmin_redis_parameter"
+			   domainObjectName="RedminRedisParameter"
+			   enableCountByExample="false"
+			   enableUpdateByExample="false"
+			   enableDeleteByExample="false"
+			   enableSelectByExample="false"
+			   selectByExampleQueryId="false"/>
+		<!--<table tableName="redmin_user" domainObjectName="RedminUser"/>-->
+		<!--<table tableName="redmin_configration" domainObjectName="RedminConfigration"/>-->
+		<!--<table tableName="redmin_redis_operation_record" domainObjectName="RedminRedisOperationRecord"/>-->
 
 	</context>
 </generatorConfiguration>

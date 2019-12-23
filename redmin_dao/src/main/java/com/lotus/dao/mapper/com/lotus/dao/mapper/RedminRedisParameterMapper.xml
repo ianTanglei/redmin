@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lotus.dao.mapper.RedminRedisParameterMapper">
+  <resultMap id="BaseResultMap" type="com.lotus.dao.bean.RedminRedisParameter">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="key" jdbcType="VARCHAR" property="key" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="type" jdbcType="BIT" property="type" />
+    <result column="desc" jdbcType="VARCHAR" property="desc" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="updaye_time" jdbcType="DATE" property="updayeTime" />
+    <result column="expire_time" jdbcType="DATE" property="expireTime" />
+    <result column="status" jdbcType="BIT" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from redmin_redis_parameter
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lotus.dao.bean.RedminRedisParameter">
+    insert into redmin_redis_parameter (id, key, value, 
+      type, desc, category, create_time, 
+      updaye_time, expire_time, status
+      )
+    values (#{id,jdbcType=INTEGER}, #{key,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR}, 
+      #{type,jdbcType=BIT}, #{desc,jdbcType=VARCHAR}, #{category,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, 
+      #{updayeTime,jdbcType=DATE}, #{expireTime,jdbcType=DATE}, #{status,jdbcType=BIT}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.lotus.dao.bean.RedminRedisParameter">
+    update redmin_redis_parameter
+    set key = #{key,jdbcType=VARCHAR},
+      value = #{value,jdbcType=VARCHAR},
+      type = #{type,jdbcType=BIT},
+      desc = #{desc,jdbcType=VARCHAR},
+      category = #{category,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=DATE},
+      updaye_time = #{updayeTime,jdbcType=DATE},
+      expire_time = #{expireTime,jdbcType=DATE},
+      status = #{status,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, key, value, type, desc, category, create_time, updaye_time, expire_time, 
+    status
+    from redmin_redis_parameter
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, key, value, type, desc, category, create_time, updaye_time, expire_time, 
+    status
+    from redmin_redis_parameter
+  </select>
+</mapper>
